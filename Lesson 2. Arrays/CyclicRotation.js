@@ -1,20 +1,17 @@
 function solution (A, K) {
-  try {
-    if (!Array.isArray(A) || isNaN(K)) {
-      throw Error('bad arguments')
-    }
-
-    if (K === 0 || A.length === K || A.length === 0) {
-      throw Error('no need to rotate')
-    }
-
-    for (let i = 0; i < K; i++) {
-      A.unshift(A.pop())
-    }
-
+  if (
+    !Array.isArray(A) ||
+    isNaN(K) ||
+    K === 0 ||
+    A.length === K ||
+    A.length === 0
+  ) {
     return A
   }
-  catch (e) {
-    return A
+
+  for (let i = 0; i < K; i++) {
+    A.unshift(A.pop())
   }
+
+  return A
 }
