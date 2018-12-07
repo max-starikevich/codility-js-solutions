@@ -1,10 +1,11 @@
-function solution(A) {
+function solution (A) {
   let candidates = new Set()
 
   A.forEach(element => {
-    if(!candidates.has(element)) {
+    if (!candidates.has(element)) {
       candidates.add(element)
-    } else {
+    }
+    else {
       candidates.delete(element)
     }
   })
