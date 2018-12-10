@@ -1,8 +1,4 @@
 function solution (A) {
-  if (!Array.isArray(A)) {
-    throw Error('bad arguments')
-  }
-
   let store = new Set()
 
   A.forEach((element) => {
