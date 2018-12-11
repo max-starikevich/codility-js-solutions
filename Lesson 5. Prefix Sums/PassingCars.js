@@ -4,21 +4,23 @@ function solution (A) {
   const MAX_PAIRS_COUNT = 1000000000
 
   let eastCount = 0
-  let eastSequence = []
+  let eastCountSequence = []
 
   A.forEach((element, index) => {
     if (element === EAST_VALUE) {
       eastCount++
     }
 
-    eastSequence[index] = eastCount
+    eastCountSequence[index] = eastCount
   })
 
   let numberOfCarPairs = 0
 
   for (let index = A.length - 1; index >= 0; index--) {
-    if (A[index] === WEST_VALUE) {
-      numberOfCarPairs += eastSequence[index]
+    let element = A[index]
+
+    if (element === WEST_VALUE) {
+      numberOfCarPairs += eastCountSequence[index]
 
       if (numberOfCarPairs > MAX_PAIRS_COUNT) {
         return -1
